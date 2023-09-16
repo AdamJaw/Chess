@@ -3,6 +3,7 @@
 #include "chessman.hpp"
 #include "converter.hpp"
 #include <array>
+#include "board.hpp"
 
 class Pawn: public Chessman{
 public:

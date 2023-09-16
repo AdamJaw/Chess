@@ -2,8 +2,20 @@
 #include "pawn.hpp"
 #include <array>
 #include <iostream>
+#include <SFML/Graphics.hpp>
+#include "board.hpp"
 
 int main(){
+    sf::RenderWindow window(sf::VideoMode(800,800),"Chess",sf::Style::Close);
+    while(window.isOpen()){
+        sf::Event evnt;
+        while(window.pollEvent(evnt)){
+            if(evnt.type == sf::Event::Closed){
+                window.close();
+            }
+        }
+        window.display();
+    }
     std::array<std::array<Chessman*,8>,8> board;
     for(int i=0;i<MAP_WIDTH;i++){
         for(int j=0;j<MAP_WIDTH;j++){

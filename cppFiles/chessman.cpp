@@ -1,4 +1,5 @@
 #include "chessman.hpp"
+#include "board.hpp"
 
 int Chessman::moveFigure(int Y, int X, std::array<std::array<Chessman*,MAP_WIDTH>,MAP_WIDTH> &board){
     if(board[Y][X]!=nullptr){

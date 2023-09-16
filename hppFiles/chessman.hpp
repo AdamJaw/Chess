@@ -4,6 +4,7 @@
 #include <string>
 #include <array>
 #include "converter.hpp"
+#include "board.hpp"
 
 class Chessman{
 public:

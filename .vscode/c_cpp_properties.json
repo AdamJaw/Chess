@@ -4,9 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/hppFiles",
-                "${workspaceFolder}/cppFiles",
-                "${workspaceFolder}/"
+                "${workspaceFolder}/hppFiles/",
+                "${workspaceFolder}/cppFiles/",
+                "${workspaceFolder}/",
+                "${workspaceFolder}/cppFiles/src/include/"
             ],
             "defines": [
                 "_DEBUG",

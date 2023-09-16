@@ -1,7 +1,6 @@
 #ifndef CONVERTER
 #define CONVERTER
-
-const int MAP_WIDTH=8;
+#include "board.hpp"
 
 int boardCoordinatesToIndex(int,int);
 

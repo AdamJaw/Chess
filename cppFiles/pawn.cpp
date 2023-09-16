@@ -1,6 +1,7 @@
 #include "pawn.hpp"
 #include <array>
 #include "converter.hpp"
+#include "board.hpp"
 
 Pawn::Pawn(int figureColor, int Y, int X){
     c_classType="Pawn";
