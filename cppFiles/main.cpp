@@ -1,11 +1,11 @@
 #include "chessman.hpp"
 #include "pawn.hpp"
-#include <array>
-#include <iostream>
+//#include <array>
+//#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "board.hpp"
 
-int main(){
+/*int main(){
     sf::RenderWindow window(sf::VideoMode(800,800),"Chess",sf::Style::Close);
     while(window.isOpen()){
         sf::Event evnt;
@@ -70,5 +70,33 @@ int main(){
     //if(board.at(0).at(0)->c_classType=="Pawn"){
     //    std::cout << "To pionek!";
     //}
+    return 0;
+}*/
+
+int main(){
+    sf::RenderWindow window(sf::VideoMode(800,800),"Chess",sf::Style::Close);
+    Board board;
+    board.c_board[0][0] = new Pawn(1,0,0);
+    board.assignDefaultFigureValues();
+    while(window.isOpen()){
+        sf::Event evnt;
+        while(window.pollEvent(evnt)){
+            if(evnt.type == sf::Event::Closed){
+                window.close();
+            }
+        }
+        window.clear();
+        for(int i=0;i<MAP_WIDTH;i++){
+            for(int j=0;j<MAP_WIDTH;j++){
+                window.draw(board.c_blankFields[i][j]);
+            }
+        }
+        for(int i=0;i<MAP_WIDTH;i++){
+            for(int j=0;j<MAP_WIDTH;j++){
+                window.draw(board.c_figureFields[i][j]);
+            }
+        }
+        window.display();
+    }
     return 0;
 }

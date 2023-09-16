@@ -11,7 +11,7 @@ bool c_firstMove;
 
 public:
 Pawn(int,int,int);
-void makeListOfPossibleMoves(std::array<std::array<Chessman*,MAP_WIDTH>,MAP_WIDTH>&);
+//void makeListOfPossibleMoves(std::array<std::array<Chessman*,MAP_WIDTH>,MAP_WIDTH>&);
 
 };
 

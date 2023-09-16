@@ -1,10 +1,10 @@
 #include "pawn.hpp"
+#include "board.hpp"
 #include <array>
 #include "converter.hpp"
-#include "board.hpp"
 
 Pawn::Pawn(int figureColor, int Y, int X){
-    c_classType="Pawn";
+    c_classType=1;
     c_figureColor=figureColor;
     c_positionX=X;
     c_positionY=Y;
@@ -13,7 +13,7 @@ Pawn::Pawn(int figureColor, int Y, int X){
     c_possibleCaptures.clear();
 }
 
-void Pawn::makeListOfPossibleMoves(std::array<std::array<Chessman*,MAP_WIDTH>,MAP_WIDTH> &board){
+/*void Pawn::makeListOfPossibleMoves(std::array<std::array<Chessman*,MAP_WIDTH>,MAP_WIDTH> &board){
     c_possibleMoves.clear();
     if(c_firstMove==false){
         if(c_figureColor==1){ //blackPawn==1
@@ -52,3 +52,4 @@ void Pawn::makeListOfPossibleMoves(std::array<std::array<Chessman*,MAP_WIDTH>,MA
     }
 }
 
+*/
