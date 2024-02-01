@@ -1,19 +1,15 @@
-#ifndef PAWN
-#define PAWN
+#ifndef ROOK
+#define ROOK
 #include "chessman.hpp"
 #include "binaryboard.hpp"
 #include "converter.hpp"
 
-class Pawn: public Chessman{
-public:
-int c_startingSide;
-bool c_firstMove;
+class Rook: public Chessman{
 
 public:
-Pawn(int,int);
+Rook(int);
 void makeListOfPossibleMoves(BinaryBoard,int,int);
 void makeListOfPossibleCaptures(BinaryBoard,int,int);
-
 };
 
 #endif

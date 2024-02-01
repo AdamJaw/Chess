@@ -1,19 +1,14 @@
-#ifndef PAWN
-#define PAWN
+#ifndef KNIGHT
+#define KNIGHT
 #include "chessman.hpp"
 #include "binaryboard.hpp"
-#include "converter.hpp"
 
-class Pawn: public Chessman{
-public:
-int c_startingSide;
-bool c_firstMove;
+class Knight: public Chessman{
 
 public:
-Pawn(int,int);
+Knight(int);
 void makeListOfPossibleMoves(BinaryBoard,int,int);
 void makeListOfPossibleCaptures(BinaryBoard,int,int);
-
 };
 
 #endif
