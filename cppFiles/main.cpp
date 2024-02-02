@@ -8,7 +8,7 @@ int main(){
     sf::RenderWindow window(sf::VideoMode(800,800),"Chess",sf::Style::Close);
     BinaryBoard binaryBoard;
     Board board;
-    for(int i=0;i<MAP_WIDTH;i++){
+    /*for(int i=0;i<MAP_WIDTH;i++){
         for(int j=0;j<MAP_WIDTH;j++){
             std::cout << board.c_tableOfFieldsMattedByBlack[i][j];
         }
@@ -20,7 +20,7 @@ int main(){
         }
         std::cout << std::endl;
     }
-   /*for(int i=0;i<MAP_WIDTH;i++){
+   for(int i=0;i<MAP_WIDTH;i++){
         for(int j=0;j<MAP_WIDTH;j++){
             std::cout << board.c_binaryBoard.c_binaryBoard[i][j];
         }
@@ -94,9 +94,10 @@ int main(){
 
                             board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->makeListOfPossibleMoves(binaryBoard,board.c_actualPiece.x,board.c_actualPiece.y);
                             board.c_howManyPossibleMoves = board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->c_possibleMoves.size();
-
+                           
                             board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->makeListOfPossibleCaptures(binaryBoard,board.c_actualPiece.x,board.c_actualPiece.y);
                             board.c_howManyPossibleCaptures = board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->c_possibleCaptures.size();
+                             //std::cout << board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->c_possibleCaptures.size();
                         }
                     }
                 }

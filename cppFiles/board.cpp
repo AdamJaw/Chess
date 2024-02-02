@@ -166,7 +166,7 @@ void Board::makeTableOfMattedFields(int figureColor){
         for(int j=0;j<MAP_WIDTH;j++){
             if(c_board[i][j]!=nullptr){
                 if(c_board[i][j]->c_figureColor==figureColor){
-                    c_board[i][j]->makeListOfPossibleCaptures(c_binaryBoard,j,i);
+                    c_board[i][j]->makeListOfPossibleCaptures(c_binaryBoard,i,j);
                     for(unsigned int k=0;k<c_board[i][j]->c_possibleCaptures.size();k++){
                         point = indexToBoardCoordinates(c_board[i][j]->c_possibleCaptures[k]);
                         if(figureColor==0){

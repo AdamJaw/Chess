@@ -4,6 +4,7 @@ Knight::Knight(int figureColor)
 {
     c_classType=2;
     c_figureColor=figureColor;
+    isKing=0;
 }
 
 void Knight::makeListOfPossibleMoves(BinaryBoard binaryBoard,int X,int Y){

@@ -4,6 +4,7 @@ King::King(int figureColor)
 {
     c_classType=5;
     c_figureColor=figureColor;
+    isKing=1;
 }
 
 void King::makeListOfPossibleMoves(BinaryBoard binaryBoard,int X,int Y){

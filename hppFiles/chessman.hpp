@@ -12,6 +12,7 @@ std::vector<int> c_possibleMoves;
 std::vector<int> c_possibleCaptures;
 int c_classType;
 int c_figureColor;
+int isKing;
 
 public:
 virtual void makeListOfPossibleMoves(BinaryBoard,int,int){

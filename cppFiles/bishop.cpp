@@ -4,6 +4,7 @@ Bishop::Bishop(int figureColor)
 {
     c_classType=1;
     c_figureColor=figureColor;
+    isKing=0;
 }
 
 void Bishop::makeListOfPossibleMoves(BinaryBoard binaryBoard,int X,int Y){

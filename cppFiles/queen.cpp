@@ -4,6 +4,7 @@ Queen::Queen(int figureColor)
 {
     c_classType=4;
     c_figureColor=figureColor;
+    isKing=0;
 }
 
 void Queen::makeListOfPossibleMoves(BinaryBoard binaryBoard, int X, int Y){

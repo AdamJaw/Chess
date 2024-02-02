@@ -4,6 +4,7 @@ Rook::Rook(int figureColor)
 {
     c_classType=3;
     c_figureColor=figureColor;
+    isKing=0;
 }
 
 void Rook::makeListOfPossibleMoves(BinaryBoard binaryBoard,int X,int Y){
