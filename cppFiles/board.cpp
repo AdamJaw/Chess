@@ -6,6 +6,9 @@ Board::Board(){
     makeBoardWithoutFigures();
     assignDefaultPointersForBoard();
     assignDefaultFigureValues();
+    makeDefaultTablesOfMattedFields();
+    makeTableOfMattedFields(1);
+    makeTableOfMattedFields(0);
     c_playerTurn=0; // Equal zero means that white pieces start, otherwise 1 is black pieces
     c_isPieceSelected=false; // By default no piece is chosen
 }
@@ -154,4 +157,45 @@ void Board::movePiece(Position targetPosition){
     c_figureFields[targetPosition.x][targetPosition.y].setTextureRect(c_figureFields[c_actualPiece.x][c_actualPiece.y].getTextureRect());
     c_board[targetPosition.x][targetPosition.y] = c_board[c_actualPiece.x][c_actualPiece.y];
     c_board[c_actualPiece.x][c_actualPiece.y] = nullptr;
+}
+
+void Board::makeTableOfMattedFields(int figureColor){
+    Point point;
+    int counter=0;
+    for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            if(c_board[i][j]!=nullptr){
+                if(c_board[i][j]->c_figureColor==figureColor){
+                    c_board[i][j]->makeListOfPossibleCaptures(c_binaryBoard,j,i);
+                    for(unsigned int k=0;k<c_board[i][j]->c_possibleCaptures.size();k++){
+                        point = indexToBoardCoordinates(c_board[i][j]->c_possibleCaptures[k]);
+                        if(figureColor==0){
+                            c_tableOfFieldsMattedByWhite[point.X][point.Y] = 1;
+                        }
+                        if(figureColor==1){
+                            counter++;
+                            //std::cout << i << ' ' << j << std::endl;
+                            //std::cout << point.X << ' ' << point.Y << std::endl;
+                            c_tableOfFieldsMattedByBlack[point.X][point.Y] = 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //std::cout << std::endl << counter << std::endl;
+}
+
+
+void Board::makeDefaultTablesOfMattedFields(){
+    for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            c_tableOfFieldsMattedByBlack[i][j]=0;
+        }
+    }
+    for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            c_tableOfFieldsMattedByWhite[i][j]=0;
+        }
+    }
 }

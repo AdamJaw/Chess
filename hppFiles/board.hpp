@@ -11,6 +11,7 @@
 #include "knight.hpp"
 #include "queen.hpp"
 #include "structures.hpp"
+#include "binaryboard.hpp"
 
 class Board{
 public:
@@ -26,6 +27,9 @@ int c_howManyPossibleMoves;
 int c_howManyPossibleCaptures;
 int c_playerTurn;
 bool c_isPieceSelected;
+std::array<std::array<int,MAP_WIDTH>,MAP_WIDTH> c_tableOfFieldsMattedByBlack;
+std::array<std::array<int,MAP_WIDTH>,MAP_WIDTH> c_tableOfFieldsMattedByWhite;
+BinaryBoard c_binaryBoard;
 
 public:
 Board();
@@ -36,6 +40,8 @@ void setActualPositionOfMouse(sf::Vector2i);
 bool setActualPiece();
 void setActualBoardPosition();
 void movePiece(Position);
+void makeTableOfMattedFields(int);
+void makeDefaultTablesOfMattedFields();
 };
 
 #endif

@@ -6,8 +6,26 @@
 
 int main(){
     sf::RenderWindow window(sf::VideoMode(800,800),"Chess",sf::Style::Close);
-    Board board;
     BinaryBoard binaryBoard;
+    Board board;
+    for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            std::cout << board.c_tableOfFieldsMattedByBlack[i][j];
+        }
+        std::cout << std::endl;
+    }
+     for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            std::cout << board.c_tableOfFieldsMattedByWhite[i][j];
+        }
+        std::cout << std::endl;
+    }
+   /*for(int i=0;i<MAP_WIDTH;i++){
+        for(int j=0;j<MAP_WIDTH;j++){
+            std::cout << board.c_binaryBoard.c_binaryBoard[i][j];
+        }
+        std::cout << std::endl;
+    }*/
     while(window.isOpen()){
         sf::Event evnt;
         while(window.pollEvent(evnt)){
@@ -39,6 +57,7 @@ int main(){
                                 if(board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->c_possibleCaptures[i] == boardCoordinatesToIndex(board.c_actualEnemyPiece.y,board.c_actualEnemyPiece.x)){
                                     board.movePiece(board.c_actualEnemyPiece);
                                     binaryBoard.moveBinaryPiece(board.c_actualPiece.x,board.c_actualPiece.y,board.c_actualEnemyPiece.x,board.c_actualEnemyPiece.y);
+                                    board.c_binaryBoard.moveBinaryPiece(board.c_actualPiece.x,board.c_actualPiece.y,board.c_actualEnemyPiece.x,board.c_actualEnemyPiece.y);
                                     board.c_isPieceSelected=false;
                                     if(board.c_playerTurn==1){
                                     board.c_playerTurn=0;
@@ -55,6 +74,7 @@ int main(){
                             if(board.c_board[board.c_actualPiece.x][board.c_actualPiece.y]->c_possibleMoves[i] == boardCoordinatesToIndex(board.c_atualPosition.y,board.c_atualPosition.x)){
                                 board.movePiece(board.c_atualPosition);
                                 binaryBoard.moveBinaryPiece(board.c_actualPiece.x,board.c_actualPiece.y,board.c_atualPosition.x,board.c_atualPosition.y);
+                                board.c_binaryBoard.moveBinaryPiece(board.c_actualPiece.x,board.c_actualPiece.y,board.c_atualPosition.x,board.c_atualPosition.y);
                                 board.c_isPieceSelected=false;
                                 if(board.c_playerTurn==1){
                                     board.c_playerTurn=0;

@@ -7,7 +7,8 @@ class King: public Chessman{
 
 public:
 King(int);
-void makeListOfPossibleMoves(BinaryBoard);
+void makeListOfPossibleMoves(BinaryBoard,int,int);
+void makeListOfPossibleCaptures(BinaryBoard,int,int);
 };
 
 #endif

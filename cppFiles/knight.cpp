@@ -60,5 +60,5 @@ void Knight::makeListOfPossibleCaptures(BinaryBoard binaryBoard,int X,int Y){
     }
     if((binaryBoard.c_binaryBoard[X-2][Y+1]!=BLANK_FIELD)&&(binaryBoard.c_binaryBoard[X-2][Y+1]!=c_figureColor)&&((X-2)<MAP_WIDTH)&&((Y+1)<MAP_WIDTH)&&((X-2)>=0)&&((Y+1)>=0)){
         c_possibleCaptures.push_back(boardCoordinatesToIndex(Y+1,X-2));
-    }    
+    }
 }
